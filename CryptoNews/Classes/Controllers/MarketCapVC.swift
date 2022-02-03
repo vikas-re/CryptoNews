@@ -165,7 +165,7 @@ extension MarketCapVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if arrCurrency.count >= perPageCount && indexPath.row == arrCurrency.count - 1 {
             if totalCount > currentPage * perPageCount {
-                currentPage += 1
+                currentPage = arrCurrency.count + 1
                 fetchCryptoData(loader: false)
             }
         }
